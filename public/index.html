@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hd Kino Lider Chat</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+<header>
+<nav>
+
+<div class="nav-chap">
+
+<h2>Uz kino</h2>
+
+</div>
+
+<div class="nav-orta">
+
+<input placeholder="Search" type="text">
+
+</div>
+
+<div class="nav-ong">
+
+<button>Premium</button>
+<button>Back</button>
+
+</div>
+
+</nav>
+</header>
+
+
+<main>
+<section>
+
+<div class="box">
+
+<div id="squidGame1" class="otacha">
+
+<a href="./squidGame.html"><img class="kino-logo" src="https://kinok.net/upload/images/jlbrV1Kl4Y8pWXu12SppebRs7On.jpg" alt=""></a>
+
+<div class="nomi">
+
+<div class="guliulu">
+
+<p>Squid Game</p>
+<img class="stikercha" src="https://smoservice.media/upload/iblock/aae/aae17b537880d6c5e46622e80c6c59e7.png" alt="">
+
+</div>
+
+</div>
+
+<div class="nw">
+
+<button><i class="fas fa-chevron-left"></i></button>
+<p>1 - season</p>
+<button><i class="fas fa-chevron-right"></i></button>
+
+</div>
+
+</div>
+
+<div id="squidGame2" class="otacha">
+
+<img class="kino-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFbyPDdLUcw1ngcXjL9LYzcrKia79-2Z2Eug&s" alt="">
+
+<div class="nomi">
+
+<div class="guliulu">
+
+<p>Squid Game</p>
+<img class="stikercha" src="https://smoservice.media/upload/iblock/aae/aae17b537880d6c5e46622e80c6c59e7.png" alt="">
+
+</div>
+
+</div>
+
+<div class="nw">
+
+<button><i class="fas fa-chevron-left"></i></button>
+<p>2 - season</p>
+<button><i class="fas fa-chevron-right"></i></button>
+
+</div>
+
+</div>
+
+<div id="squidGame3" class="otacha">
+
+<img class="kino-logo" src="https://freekino.net/img/poster/xkalmar-oyini-3-fasl_1751088610.webp.pagespeed.ic.oJ8n4J9org.webp" alt="">
+
+<div class="nomi">
+
+<div class="guliulu">
+
+<p>Squid Game</p>
+<img class="stikercha" src="https://smoservice.media/upload/iblock/aae/aae17b537880d6c5e46622e80c6c59e7.png" alt="">
+
+</div>
+
+</div>
+
+<div class="nw">
+
+<button><i class="fas fa-chevron-left"></i></button>
+<p>3 - season</p>
+<button><i class="fas fa-chevron-right"></i></button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+</main>
+
+
+
+
+
+
+
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.otacha');
+    let current = 0;
+
+    function showCard(index) {
+      cards.forEach((card, i) => {
+        card.style.display = i === index ? 'block' : 'none';
+      });
+    }
+
+    showCard(current); // boshlanishda faqat birinchi div ko‘rinadi
+
+    cards.forEach((card, i) => {
+      const leftBtn = card.querySelector('.fa-chevron-left');
+      const rightBtn = card.querySelector('.fa-chevron-right');
+
+      leftBtn.addEventListener('click', () => {
+        current = (current - 1 + cards.length) % cards.length;
+        showCard(current);
+      });
+
+      rightBtn.addEventListener('click', () => {
+        current = (current + 1) % cards.length;
+        showCard(current);
+      });
+    });
+  });
+</script>
+</body>
+</html>

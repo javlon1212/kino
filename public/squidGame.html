@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidoe html</title>
+    <link rel="stylesheet" href="./vd.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    
+<header>
+<nav>
+
+<div class="nav-chap">
+
+<h2>Uz kino</h2>
+
+</div>
+
+<div class="nav">
+
+<p>Bizning homiy <a style="color: rgb(4, 0, 255); text-decoration: none;" target="_blank" href="https://uzmovi.tv/">UZMOVIE.COM</a></p>
+
+</div>
+
+<div class="nav-ong">
+
+<button>Premium</button>
+<a href="./index.html"><button>Back</button></a>
+
+</div>
+
+</nav>
+</header>
+
+<iframe class="squid1" id="kalmar1" modestbranding=1 rel=0 controls=1 width="640" height="360" src="https://mover.uz/video/embed/6qJLyBky" frameborder="0" allowfullscreen></iframe>
+<iframe class="squid2" id="a3342151" width="640" height="360" src="https://mover.uz/video/embed/k8J1YwOI" frameborder="0" allowfullscreen></iframe>
+<iframe class="squid3" id="a3342153" width="640" height="360" src="https://mover.uz/video/embed/hvhXTDFw" frameborder="0" allowfullscreen></iframe>
+<iframe class="squid4" id="a3342152" width="640" height="360" src="https://mover.uz/video/embed/BxWPUepv" frameborder="0" allowfullscreen></iframe>
+<iframe class="squid5" id="a3542151" width="640" height="360" src="https://mover.uz/video/embed/YBvAdhlT" frameborder="0" allowfullscreen></iframe>
+<iframe class="squid6" id="a33454151" width="640" height="360" src="https://mover.uz/video/embed/zkzboxf6" frameborder="0" allowfullscreen></iframe>
+<iframe class="squid7" id="ay33971900" width="640" height="360" src="https://mover.uz/video/embed/8sCkm3VF" frameborder="0" allowfullscreen></iframe>
+<iframe class="squid8" id="a334215311" width="640" height="360" src="https://mover.uz/video/embed/Ft0lny1g" frameborder="0" allowfullscreen></iframe>
+<iframe class="squid9" id="a3335122151" width="640" height="360" src="https://mover.uz/video/embed/ECh17LRP" frameborder="0" allowfullscreen></iframe>
+
+<div class="kk">
+
+<i class="far fa-heart"></i>
+<i class="fas fa-heart"></i>
+<p id="like" >0</p>
+
+<i class="fas fa-thumbs-down"></i>
+<p id="yoqlike" >0</p>
+
+<p>Id video <i class="fas fa-copy"></i></p>
+
+</div>
+
+<select>
+    <option value="kalmar1">1 Episode</option>
+    <option value="kalmar2">2 Episode</option>
+    <option value="kalmar3">3 Episode</option>
+    <option value="kalmar4">4 Episode</option>
+    <option value="kalmar5">5 Episode</option>
+    <option value="kalmar6">6 Episode</option>
+    <option value="kalmar7">7 Episode</option>
+    <option value="kalmar8">8 Episode</option>
+    <option value="kalmar9">9 Episode</option>
+
+</select>
+
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const select = document.querySelector('select');
+    const iframes = document.querySelectorAll('iframe');
+    const copyBtn = document.querySelector('.fa-copy');
+
+    function hideAllIframes() {
+        iframes.forEach(iframe => {
+            iframe.style.display = 'none';
+        });
+    }
+
+    // Boshlanishida faqat squid1 ko‘rsatiladi
+    hideAllIframes();
+    const firstIframe = document.querySelector('.squid1');
+    if (firstIframe) firstIframe.style.display = 'block';
+
+    // select tanlanganda
+    select.addEventListener('change', function () {
+        const val = select.value; // masalan "kalmar3"
+        const squidClass = 'squid' + val.replace('kalmar', ''); // squid3
+
+        hideAllIframes();
+        const selectedIframe = document.querySelector('.' + squidClass);
+        if (selectedIframe) {
+            selectedIframe.style.display = 'block';
+        }
+    });
+
+    // copy tugmasi bosilganda
+    copyBtn.addEventListener('click', function () {
+        const visibleIframe = Array.from(iframes).find(iframe => iframe.style.display === 'block');
+        if (visibleIframe) {
+            const id = visibleIframe.id;
+            navigator.clipboard.writeText(id).then(() => {
+                alert(`ID: ${id} nusxalandi!`);
+            });
+        }
+    });
+});
+</script>
+</body>
+</html>
